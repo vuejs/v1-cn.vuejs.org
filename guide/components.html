@@ -1,0 +1,577 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>组件 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:300,500&text=Vue.js' rel='stylesheet' type='text/css'>
+        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "guide"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        
+            <div id="header">
+    <a id="logo" href="/">
+        <img src="/images/logo.png">
+        <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+        <li>
+  <form id="search-form">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/blog/" class="nav-link">博客</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+</div>
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+  <form id="search-form">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/blog/" class="nav-link">博客</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+			
+			教程
+            <select class="version-select">
+                <option selected>1.0</option>
+                <option>0.12</option>
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+                <li>
+                    <a href="/guide/installation.html" class="sidebar-link">安装</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/index.html" class="sidebar-link">起步</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/overview.html" class="sidebar-link">概述</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/instance.html" class="sidebar-link">Vue 实例</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/syntax.html" class="sidebar-link">数据绑定语法</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/computed.html" class="sidebar-link">计算属性</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/class-and-style.html" class="sidebar-link">Class 与 Style 绑定</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/conditional.html" class="sidebar-link">条件渲染</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/list.html" class="sidebar-link">列表渲染</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/events.html" class="sidebar-link">方法与事件处理器</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/forms.html" class="sidebar-link">表单控件绑定</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/transitions.html" class="sidebar-link">过渡</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/components.html" class="sidebar-link current">组件</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/reactivity.html" class="sidebar-link">深入响应式原理</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/custom-directive.html" class="sidebar-link">自定义指令</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/custom-filter.html" class="sidebar-link">自定义过滤器</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/mixins.html" class="sidebar-link">混合</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/plugins.html" class="sidebar-link">插件</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/application.html" class="sidebar-link">构建大型应用</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/comparison.html" class="sidebar-link">对比其它框架</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/join.html" class="sidebar-link">加入 Vue 社区！</a>
+                </li>
+            
+        </ul>
+<!--         <div id="donate">
+            <span class="wrapper" style="width: 72px">
+              <img src="/images/weixinpay.png">
+              <a>打个赏</a>
+            </span>
+        </div> -->
+    </div>
+</div>
+
+
+<div class="content guide with-sidebar">
+    <div id="ad">
+  <span>Proudly sponsored by</span>
+  <br>
+  <a href="https://strikingly.com/s/careers?utm_source=v" target="_blank"
+    style="display:inline-block;padding-top:8px">
+    <img src="/images/strikingly.png">
+  </a>
+</div>
+
+    <h1>组件</h1>
+    <h2 id="什么是组件？"><a href="#什么是组件？" class="headerlink" title="什么是组件？"></a>什么是组件？</h2><p>组件（Component）是 Vue.js 最强大的功能之一。组件可以扩展 HTML 元素，封装可重用的代码。在较高层面上，组件是自定义元素，Vue.js 的编译器为它添加特殊功能。在有些情况下，组件也可以是原生 HTML 元素的形式，以 <code>is</code> 特性扩展。</p>
+<h2 id="使用组件"><a href="#使用组件" class="headerlink" title="使用组件"></a>使用组件</h2><h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>之前说过，我们可以用 <code>Vue.extend()</code> 创建一个组件构造器：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> MyComponent = Vue.extend(&#123;</div><div class="line">  <span class="comment">// 选项...</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>要把这个构造器用作组件，需要用 <code>Vue.component(tag, constructor)</code> <strong>注册</strong> ：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 全局注册组件，tag 为 my-component</span></div><div class="line">Vue.component(<span class="string">'my-component'</span>, MyComponent)</div></pre></td></tr></table></figure>
+<p class="tip">对于自定义标签名字，Vue.js 不强制要求遵循 <a href="http://www.w3.org/TR/custom-elements/#concepts" target="_blank" rel="external">W3C 规则</a>（小写，并且包含一个短杠），尽管遵循这个规则比较好。</p>
+
+<p>组件在注册之后，便可以在父实例的模块中以自定义元素 <code>&lt;my-component&gt;</code> 的形式使用。要确保在初始化根实例<strong>之前</strong>注册了组件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">my-component</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 定义</span></div><div class="line"><span class="keyword">var</span> MyComponent = Vue.extend(&#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;A custom component!&lt;/div&gt;'</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 注册</span></div><div class="line">Vue.component(<span class="string">'my-component'</span>, MyComponent)</div><div class="line"></div><div class="line"><span class="comment">// 创建根实例</span></div><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#example'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>渲染为：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>A custom component!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<div id="example" class="demo">
+  <my-component></my-component>
+</div>
+<script>
+Vue.component('my-component', {
+  template: '<div>A custom component!</div>'
+})
+new Vue({ el: '#example' })
+</script>
+
+<p>注意组件的模板<strong>替换</strong>了自定义元素，自定义元素的作用只是作为一个<strong>挂载点</strong>。可以用实例选项 <code>replace</code> 决定是否替换。</p>
+<h3 id="局部注册"><a href="#局部注册" class="headerlink" title="局部注册"></a>局部注册</h3><p>不需要全局注册每个组件。可以让组件只能用在其它组件内，用实例选项 <code>components</code> 注册：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> Child = Vue.extend(&#123; <span class="comment">/* ... */</span> &#125;)</div><div class="line"></div><div class="line"><span class="keyword">var</span> Parent = Vue.extend(&#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'...'</span>,</div><div class="line">  <span class="attr">components</span>: &#123;</div><div class="line">    <span class="comment">// &lt;my-component&gt; 只能用在父组件模板内</span></div><div class="line">    <span class="string">'my-component'</span>: Child</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这种封装也适用于其它资源，如指令、过滤器和过渡。</p>
+<h3 id="注册语法糖"><a href="#注册语法糖" class="headerlink" title="注册语法糖"></a>注册语法糖</h3><p>为了让事件更简单，可以直接传入选项对象而不是构造器给 <code>Vue.component()</code> 和 <code>component</code> 选项。Vue.js 在背后自动调用 <code>Vue.extend()</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 在一个步骤中扩展与注册</span></div><div class="line">Vue.component(<span class="string">'my-component'</span>, &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;div&gt;A custom component!&lt;/div&gt;'</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 局部注册也可以这么做</span></div><div class="line"><span class="keyword">var</span> Parent = Vue.extend(&#123;</div><div class="line">  <span class="attr">components</span>: &#123;</div><div class="line">    <span class="string">'my-component'</span>: &#123;</div><div class="line">      <span class="attr">template</span>: <span class="string">'&lt;div&gt;A custom component!&lt;/div&gt;'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="组件选项问题"><a href="#组件选项问题" class="headerlink" title="组件选项问题"></a>组件选项问题</h3><p>传入 Vue 构造器的多数选项也可以用在 <code>Vue.extend()</code> 中，不过有两个特例： <code>data</code> 和 <code>el</code>。试想如果我们简单地把一个对象作为 <code>data</code> 选项传给 <code>Vue.extend()</code>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;</div><div class="line"><span class="keyword">var</span> MyComponent = Vue.extend(&#123;</div><div class="line">  <span class="attr">data</span>: data</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>这么做的问题是 <code>MyComponent</code> 所有的实例将共享同一个 <code>data</code> 对象！这基本不是我们想要的，因此我们应当使用一个函数作为 <code>data</code> 选项，让这个函数返回一个新对象：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> MyComponent = Vue.extend(&#123;</div><div class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>同理，<code>el</code> 选项用在 <code>Vue.extend()</code> 中时也须是一个函数。</p>
+<h3 id="模板解析"><a href="#模板解析" class="headerlink" title="模板解析"></a>模板解析</h3><p>Vue 的模板是 DOM 模板，使用浏览器原生的解析器而不是自己实现一个。相比字符串模板，DOM 模板有一些好处，但是也有问题，它必须是有效的 HTML 片段。一些 HTML 元素对什么元素可以放在它里面有限制。常见的限制：</p>
+<ul>
+<li><code>a</code> 不能包含其它的交互元素（如按钮，链接）</li>
+<li><code>ul</code> 和 <code>ol</code> 只能直接包含 <code>li</code></li>
+<li><code>select</code> 只能包含 <code>option</code> 和 <code>optgroup</code></li>
+<li><code>table</code> 只能直接包含 <code>thead</code>, <code>tbody</code>, <code>tfoot</code>, <code>tr</code>, <code>caption</code>, <code>col</code>, <code>colgroup</code></li>
+<li><code>tr</code> 只能直接包含 <code>th</code> 和 <code>td</code></li>
+</ul>
+<p>在实际中，这些限制会导致意外的结果。尽管在简单的情况下它可能可以工作，但是你不能依赖自定义组件在浏览器验证之前的展开结果。例如 <code>&lt;my-select&gt;&lt;option&gt;...&lt;/option&gt;&lt;/my-select&gt;</code> 不是有效的模板，即使 <code>my-select</code> 组件最终展开为 <code>&lt;select&gt;...&lt;/select&gt;</code>。</p>
+<p>另一个结果是，自定义标签（包括自定义元素和特殊标签，如 <code>&lt;component&gt;</code>、<code>&lt;template&gt;</code>、 <code>&lt;partial&gt;</code> ）不能用在 <code>ul</code>, <code>select</code>, <code>table</code> 等对内部元素有限制的标签内。放在这些元素内部的自定义标签将被提到元素的外面，因而渲染不正确。</p>
+<p>对于自定义元素，应当使用 <code>is</code> 特性：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span> <span class="attr">is</span>=<span class="string">"my-component"</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>&lt;template&gt;</code> 不能用在 <code>&lt;table&gt;</code> 内，这时应使用 <code>&lt;tbody&gt;</code>，<code>&lt;table&gt;</code> 可以有多个 <code>&lt;tbody&gt;</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tbody</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span>Even row<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span>Odd row<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h2><h3 id="使用-Props-传递数据"><a href="#使用-Props-传递数据" class="headerlink" title="使用 Props 传递数据"></a>使用 Props 传递数据</h3><p><strong>组件实例的作用域是孤立的</strong>。这意味着不能并且不应该在子组件的模板内直接引用父组件的数据。可以使用 <strong>props</strong> 把数据传给子组件。</p>
+<p>“prop” 是组件数据的一个字段，期望从父组件传下来。子组件需要显式地用 <a href="/api/#props"><code>props</code> 选项</a> 声明 props：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'child'</span>, &#123;</div><div class="line">  <span class="comment">// 声明 props</span></div><div class="line">  props: [<span class="string">'msg'</span>],</div><div class="line">  <span class="comment">// prop 可以用在模板内</span></div><div class="line">  <span class="comment">// 可以用 `this.msg` 设置</span></div><div class="line">  template: <span class="string">'&lt;span&gt;&#123;&#123; msg &#125;&#125;&lt;/span&gt;'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>然后向它传入一个普通字符串：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">msg</span>=<span class="string">"hello!"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>结果：</strong></p>
+
+<div id="prop-example-1" class="demo">
+  <child msg="hello!"></child>
+</div>
+<script>
+new Vue({
+  el: '#prop-example-1',
+  components: {
+    child: {
+      props: ['msg'],
+      template: '<span>{{ msg }}</span>'
+    }
+  }
+})
+</script>
+
+<h3 id="camelCase-vs-kebab-case"><a href="#camelCase-vs-kebab-case" class="headerlink" title="camelCase vs. kebab-case"></a>camelCase vs. kebab-case</h3><p>HTML 特性不区分大小写。名字形式为 camelCase 的 prop 用作特性时，需要转为 kebab-case（短横线隔开）：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'child'</span>, &#123;</div><div class="line">  <span class="comment">// camelCase in JavaScript</span></div><div class="line">  props: [<span class="string">'myMessage'</span>],</div><div class="line">  <span class="attr">template</span>: <span class="string">'&lt;span&gt;&#123;&#123; myMessage &#125;&#125;&lt;/span&gt;'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- kebab-case in HTML --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">my-message</span>=<span class="string">"hello!"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="动态-Props"><a href="#动态-Props" class="headerlink" title="动态 Props"></a>动态 Props</h3><p>类似于用 <code>v-bind</code> 绑定 HTML 特性到一个表达式，也可以用 <code>v-bind</code> 绑定动态 Props 到父组件的数据。每当父组件的数据变化时，也会传导给子组件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"parentMsg"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">child</span> <span class="attr">v-bind:my-message</span>=<span class="string">"parentMsg"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>使用 <code>v-bind</code> 的缩写语法通常更简单：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:my-message</span>=<span class="string">"parentMsg"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><strong>结果：</strong></p>
+
+<div id="demo-2" class="demo">
+  <input v-model="parentMsg">
+  <br>
+  <child v-bind:my-message="parentMsg"></child>
+</div>
+<script>
+new Vue({
+  el: '#demo-2',
+  data: {
+    parentMsg: 'Message from parent'
+  },
+  components: {
+    child: {
+      props: ['myMessage'],
+      template: '<span>{{myMessage}}</span>'
+    }
+  }
+})
+</script>
+
+<h3 id="字面量语法-vs-动态语法"><a href="#字面量语法-vs-动态语法" class="headerlink" title="字面量语法 vs. 动态语法"></a>字面量语法 vs. 动态语法</h3><p>初学者常犯的一个错误是使用字面量语法传递数值：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 传递了一个字符串 "1" --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">comp</span> <span class="attr">some-prop</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">comp</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>因为它是一个字面 prop，它的值以字符串 <code>&quot;1&quot;</code> 而不是以实际的数字传下去。如果想传递一个实际的 JavaScript 数字，需要使用动态语法，从而让它的值被当作 JavaScript 表达式计算：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 传递实际的数字  --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">comp</span> <span class="attr">:some-prop</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">comp</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Prop-绑定类型"><a href="#Prop-绑定类型" class="headerlink" title="Prop 绑定类型"></a>Prop 绑定类型</h3><p>prop 默认是<strong>单向</strong>绑定：当父组件的属性变化时，将传导给子组件，但是反过来不会。这是为了防止子组件无意修改了父组件的状态——这会让应用的数据流难以理解。不过，也可以使用 <code>.sync</code> 或 <code>.once</code> <strong>绑定修饰符</strong>显式地强制双向或单次绑定：</p>
+<p>比较语法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 默认为单向绑定 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:msg</span>=<span class="string">"parentMsg"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 双向绑定 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:msg.sync</span>=<span class="string">"parentMsg"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 单次绑定 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">:msg.once</span>=<span class="string">"parentMsg"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>双向绑定会把子组件的 <code>msg</code> 属性同步回父组件的 <code>parentMsg</code> 属性。单次绑定在建立之后不会同步之后的变化。</p>
+<p class="tip">注意如果 prop 是一个对象或数组，是按引用传递。在子组件内修改它<strong>会</strong>影响父组件的状态，不管是使用哪种绑定类型。</p>
+
+<h3 id="Prop-验证"><a href="#Prop-验证" class="headerlink" title="Prop 验证"></a>Prop 验证</h3><p>组件可以为 props 指定验证要求。当组件给其他人使用时这很有用，因为这些验证要求构成了组件的 API，确保其他人正确地使用组件。此时 props 的值是一个对象，包含验证要求：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'example'</span>, &#123;</div><div class="line">  <span class="attr">props</span>: &#123;</div><div class="line">    <span class="comment">// 基础类型检测 （`null` 意思是任何类型都可以）</span></div><div class="line">    propA: <span class="built_in">Number</span>,</div><div class="line">    <span class="comment">// 多种类型 (1.0.21+)</span></div><div class="line">    propM: [<span class="built_in">String</span>, <span class="built_in">Number</span>],</div><div class="line">    <span class="comment">// 必需且是字符串</span></div><div class="line">    propB: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="built_in">String</span>,</div><div class="line">      <span class="attr">required</span>: <span class="literal">true</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 数字，有默认值</span></div><div class="line">    propC: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</div><div class="line">      <span class="attr">default</span>: <span class="number">100</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 对象/数组的默认值应当由一个函数返回</span></div><div class="line">    propD: &#123;</div><div class="line">      <span class="attr">type</span>: <span class="built_in">Object</span>,</div><div class="line">      <span class="attr">default</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> &#123; <span class="attr">msg</span>: <span class="string">'hello'</span> &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 指定这个 prop 为双向绑定</span></div><div class="line">    <span class="comment">// 如果绑定类型不对将抛出一条警告</span></div><div class="line">    propE: &#123;</div><div class="line">      <span class="attr">twoWay</span>: <span class="literal">true</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 自定义验证函数</span></div><div class="line">    propF: &#123;</div><div class="line">      <span class="attr">validator</span>: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> value &gt; <span class="number">10</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 转换函数（1.0.12 新增）</span></div><div class="line">    <span class="comment">// 在设置值之前转换值</span></div><div class="line">    propG: &#123;</div><div class="line">      <span class="attr">coerce</span>: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> val + <span class="string">''</span> <span class="comment">// 将值转换为字符串</span></div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">propH</span>: &#123;</div><div class="line">      <span class="attr">coerce</span>: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(val) <span class="comment">// 将 JSON 字符串转换为对象</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><code>type</code> 可以是下面原生构造器：</p>
+<ul>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
+<li>Function</li>
+<li>Object</li>
+<li>Array</li>
+</ul>
+<p><code>type</code> 也可以是一个自定义构造器，使用 <code>instanceof</code> 检测。</p>
+<p>当 prop 验证失败了，Vue 将拒绝在子组件上设置此值，如果使用的是开发版本会抛出一条警告。</p>
+<h2 id="父子组件通信"><a href="#父子组件通信" class="headerlink" title="父子组件通信"></a>父子组件通信</h2><h3 id="父链"><a href="#父链" class="headerlink" title="父链"></a>父链</h3><p>子组件可以用 <code>this.$parent</code> 访问它的父组件。根实例的后代可以用 <code>this.$root</code> 访问它。父组件有一个数组 <code>this.$children</code>，包含它所有的子元素。</p>
+<p>尽管可以访问父链上任意的实例，不过子组件应当避免直接依赖父组件的数据，尽量显式地使用 props 传递数据。另外，在子组件中修改父组件的状态是非常糟糕的做法，因为：</p>
+<ol>
+<li><p>这让父组件与子组件紧密地耦合；</p>
+</li>
+<li><p>只看父组件，很难理解父组件的状态。因为它可能被任意子组件修改！理想情况下，只有组件自己能修改它的状态。</p>
+</li>
+</ol>
+<h3 id="自定义事件"><a href="#自定义事件" class="headerlink" title="自定义事件"></a>自定义事件</h3><p>Vue 实例实现了一个自定义事件接口，用于在组件树中通信。这个事件系统独立于原生 DOM 事件，用法也不同。</p>
+<p>每个 Vue 实例都是一个事件触发器：</p>
+<ul>
+<li><p>使用 <code>$on()</code> 监听事件；</p>
+</li>
+<li><p>使用 <code>$emit()</code> 在它上面触发事件；</p>
+</li>
+<li><p>使用 <code>$dispatch()</code> 派发事件，事件沿着父链冒泡；</p>
+</li>
+<li><p>使用 <code>$broadcast()</code> 广播事件，事件向下传导给所有的后代。</p>
+</li>
+</ul>
+<p class="tip">不同于 DOM 事件，Vue 事件在冒泡过程中第一次触发回调之后自动停止冒泡，除非回调明确返回 <code>true</code>。</p>
+
+<p>简单例子：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 子组件模板 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">template</span> <span class="attr">id</span>=<span class="string">"child-template"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"msg"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">"notify"</span>&gt;</span>Dispatch Event<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 父组件模板 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"events-example"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Messages: &#123;&#123; messages | json &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">child</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 注册子组件</span></div><div class="line"><span class="comment">// 将当前消息派发出去</span></div><div class="line">Vue.component(<span class="string">'child'</span>, &#123;</div><div class="line">  <span class="attr">template</span>: <span class="string">'#child-template'</span>,</div><div class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123; <span class="attr">msg</span>: <span class="string">'hello'</span> &#125;</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">methods</span>: &#123;</div><div class="line">    <span class="attr">notify</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (<span class="keyword">this</span>.msg.trim()) &#123;</div><div class="line">        <span class="keyword">this</span>.$dispatch(<span class="string">'child-msg'</span>, <span class="keyword">this</span>.msg)</div><div class="line">        <span class="keyword">this</span>.msg = <span class="string">''</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">// 初始化父组件</span></div><div class="line"><span class="comment">// 将收到消息时将事件推入一个数组</span></div><div class="line"><span class="keyword">var</span> parent = <span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'#events-example'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">messages</span>: []</div><div class="line">  &#125;,</div><div class="line">  <span class="comment">// 在创建实例时 `events` 选项简单地调用 `$on`</span></div><div class="line">  events: &#123;</div><div class="line">    <span class="string">'child-msg'</span>: <span class="function"><span class="keyword">function</span> (<span class="params">msg</span>) </span>&#123;</div><div class="line">      <span class="comment">// 事件回调内的 `this` 自动绑定到注册它的实例上</span></div><div class="line">      <span class="keyword">this</span>.messages.push(msg)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+
+<script type="x/template" id="child-template">
+  <input v-model="msg">
+  <button v-on:click="notify">Dispatch Event</button>
+</script>
+
+<div id="events-example" class="demo">
+  <p>Messages: {{ messages | json }}</p>
+  <child></child>
+</div>
+<script>
+Vue.component('child', {
+  template: '#child-template',
+  data: function () {
+    return { msg: 'hello' }
+  },
+  methods: {
+    notify: function () {
+      if (this.msg.trim()) {
+        this.$dispatch('child-msg', this.msg)
+        this.msg = ''
+      }
+    }
+  }
+})
+
+var parent = new Vue({
+  el: '#events-example',
+  data: {
+    messages: []
+  },
+  events: {
+    'child-msg': function (msg) {
+      this.messages.push(msg)
+    }
+  }
+})
+</script>
+
+<h3 id="使用-v-on-绑定自定义事件"><a href="#使用-v-on-绑定自定义事件" class="headerlink" title="使用 v-on 绑定自定义事件"></a>使用 v-on 绑定自定义事件</h3><p>上例非常好，不过从父组件的代码中不能直观的看到 <code>&quot;child-msg&quot;</code> 事件来自哪里。如果我们在模板中子组件用到的地方声明事件处理器会更好。为此子组件可以用 <code>v-on</code> 监听自定义事件：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">child</span> <span class="attr">v-on:child-msg</span>=<span class="string">"handleIt"</span>&gt;</span><span class="tag">&lt;/<span class="name">child</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这样就很清楚了：当子组件触发了 <code>&quot;child-msg&quot;</code> 事件，父组件的 <code>handleIt</code> 方法将被调用。所有影响父组件状态的代码放到父组件的 <code>handleIt</code> 方法中；子组件只关注触发事件。</p>
+<h3 id="子组件索引"><a href="#子组件索引" class="headerlink" title="子组件索引"></a>子组件索引</h3><p>尽管有 props 和 events，但是有时仍然需要在 JavaScript 中直接访问子组件。为此可以使用 <code>v-ref</code> 为子组件指定一个索引 ID。例如：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">user-profile</span> <span class="attr">v-ref:profile</span>&gt;</span><span class="tag">&lt;/<span class="name">user-profile</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> parent = <span class="keyword">new</span> Vue(&#123; <span class="attr">el</span>: <span class="string">'#parent'</span> &#125;)</div><div class="line"><span class="comment">// 访问子组件</span></div><div class="line"><span class="keyword">var</span> child = parent.$refs.profile</div></pre></td></tr></table></figure>
+<p><code>v-ref</code> 和 <code>v-for</code> 一起用时，ref 是一个数组或对象，包含相应的子组件。</p>
+<h2 id="使用-Slot-分发内容"><a href="#使用-Slot-分发内容" class="headerlink" title="使用 Slot 分发内容"></a>使用 Slot 分发内容</h2><p>在使用组件时，常常要像这样组合它们：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">app</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">app-header</span>&gt;</span><span class="tag">&lt;/<span class="name">app-header</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">app-footer</span>&gt;</span><span class="tag">&lt;/<span class="name">app-footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">app</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>注意两点：</p>
+<ol>
+<li><p><code>&lt;app&gt;</code> 组件不知道它的挂载点会有什么内容，挂载点的内容是由 <code>&lt;app&gt;</code> 的父组件决定的。</p>
+</li>
+<li><p><code>&lt;app&gt;</code> 组件很可能有它自己的模板。</p>
+</li>
+</ol>
+<p>为了让组件可以组合，我们需要一种方式来混合父组件的内容与子组件自己的模板。这个处理称为<strong>内容分发</strong>（或 “transclusion”，如果你熟悉 Angular）。Vue.js 实现了一个内容分发 API，参照了当前 <a href="https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Slots-Proposal.md" target="_blank" rel="external">Web 组件规范草稿</a>，使用特殊的 <code>&lt;slot&gt;</code> 元素作为原始内容的插槽。</p>
+<h3 id="编译作用域"><a href="#编译作用域" class="headerlink" title="编译作用域"></a>编译作用域</h3><p>在深入内容分发 API 之前，我们先明确内容的编译作用域。假定模板为：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">child-component</span>&gt;</span></div><div class="line">  &#123;&#123; msg &#125;&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">child-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>msg</code> 应该绑定到父组件的数据，还是绑定到子组件的数据？答案是父组件。组件作用域简单地说是：</p>
+<blockquote>
+<p>父组件模板的内容在父组件作用域内编译；子组件模板的内容在子组件作用域内编译</p>
+</blockquote>
+<p>一个常见错误是试图在父组件模板内将一个指令绑定到子组件的属性/方法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 无效 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">child-component</span> <span class="attr">v-show</span>=<span class="string">"someChildProperty"</span>&gt;</span><span class="tag">&lt;/<span class="name">child-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>假定 <code>someChildProperty</code> 是子组件的属性，上例不会如预期那样工作。父组件模板不应该知道子组件的状态。</p>
+<p>如果要绑定子组件内的指令到一个组件的根节点，应当在它的模板内这么做：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'child-component'</span>, &#123;</div><div class="line">  <span class="comment">// 有效，因为是在正确的作用域内</span></div><div class="line">  template: <span class="string">'&lt;div v-show="someChildProperty"&gt;Child&lt;/div&gt;'</span>,</div><div class="line">  <span class="attr">data</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      <span class="attr">someChildProperty</span>: <span class="literal">true</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>类似地，分发内容是在父组件作用域内编译。</p>
+<h3 id="单个-Slot"><a href="#单个-Slot" class="headerlink" title="单个 Slot"></a>单个 Slot</h3><p>父组件的内容将被<strong>抛弃</strong>，除非子组件模板包含 <code>&lt;slot&gt;</code>。如果子组件模板只有一个没有特性的 slot，父组件的整个内容将插到 slot 所在的地方并替换它。</p>
+<p><code>&lt;slot&gt;</code> 标签的内容视为<strong>回退内容</strong>。回退内容在子组件的作用域内编译，当宿主元素为空并且没有内容供插入时显示这个回退内容。</p>
+<p>假定 <code>my-component</code> 组件有下面模板：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is my component!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">slot</span>&gt;</span></div><div class="line">    如果没有分发内容则显示我。</div><div class="line">  <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>父组件模板：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is some original content<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is some more original content<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>渲染结果：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is my component!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is some original content<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is some more original content<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="具名-Slot"><a href="#具名-Slot" class="headerlink" title="具名 Slot"></a>具名 Slot</h3><p><code>&lt;slot&gt;</code> 元素可以用一个特殊的属性 <code>name</code> 来配置如何分发内容。多个 slot 可以有不同的名字。具名 slot 将匹配内容片段中有对应 <code>slot</code> 特性的元素。</p>
+<p>仍然可以有一个匿名 slot，它是<strong>默认 slot</strong>，作为找不到匹配的内容片段的回退插槽。如果没有默认的 slot，这些找不到匹配的内容片段将被抛弃。</p>
+<p>例如，假定我们有一个 <code>multi-insertion</code> 组件，它的模板为：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"one"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"two"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>父组件模板：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">multi-insertion</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"one"</span>&gt;</span>One<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"two"</span>&gt;</span>Two<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Default A<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">multi-insertion</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>渲染结果为：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"one"</span>&gt;</span>One<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Default A<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"two"</span>&gt;</span>Two<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在组合组件时，内容分发 API 是非常有用的机制。</p>
+<h2 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h2><p>多个组件可以使用同一个挂载点，然后动态地在它们之间切换。使用保留的 <code>&lt;component&gt;</code> 元素，动态地绑定到它的 <code>is</code> 特性：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> Vue(&#123;</div><div class="line">  <span class="attr">el</span>: <span class="string">'body'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">currentView</span>: <span class="string">'home'</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">components</span>: &#123;</div><div class="line">    <span class="attr">home</span>: &#123; <span class="comment">/* ... */</span> &#125;,</div><div class="line">    <span class="attr">posts</span>: &#123; <span class="comment">/* ... */</span> &#125;,</div><div class="line">    <span class="attr">archive</span>: &#123; <span class="comment">/* ... */</span> &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"currentView"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- 组件在 vm.currentview 变化时改变 --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a><code>keep-alive</code></h3><p>如果把切换出去的组件保留在内存中，可以保留它的状态或避免重新渲染。为此可以添加一个 <code>keep-alive</code> 指令参数：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">component</span> <span class="attr">:is</span>=<span class="string">"currentView"</span> <span class="attr">keep-alive</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- 非活动组件将被缓存 --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="activate-钩子"><a href="#activate-钩子" class="headerlink" title="activate 钩子"></a><code>activate</code> 钩子</h3><p>在切换组件时，切入组件在切入前可能需要进行一些异步操作。为了控制组件切换这一时段，给切入组件添加 <code>activate</code> 钩子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'activate-example'</span>, &#123;</div><div class="line">  <span class="attr">activate</span>: <span class="function"><span class="keyword">function</span> (<span class="params">done</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span></div><div class="line">    loadDataAsync(<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">      self.someData = data</div><div class="line">      done()</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>注意 <code>activate</code> 钩子只作用于动态组件切换或静态组件初始化渲染的过程中，不作用于使用实例方法手工插入的过程中。</p>
+<h3 id="transition-mode"><a href="#transition-mode" class="headerlink" title="transition-mode"></a><code>transition-mode</code></h3><p><code>transition-mode</code> 特性用于指定两个动态组件之间如何过渡。</p>
+<p>在默认情况下，进入与离开平滑地过渡。这个特性可以指定另外两种模式：</p>
+<ul>
+<li><p><code>in-out</code>：新组件先过渡进入，等它的过渡完成之后当前组件过渡出去。</p>
+</li>
+<li><p><code>out-in</code>：当前组件先过渡出去，等它的过渡完成之后新组件过渡进入。</p>
+</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 先淡出再淡入 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">component</span></span></div><div class="line">  <span class="attr">:is</span>=<span class="string">"view"</span></div><div class="line">  <span class="attr">transition</span>=<span class="string">"fade"</span></div><div class="line">  <span class="attr">transition-mode</span>=<span class="string">"out-in"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">component</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.fade-transition</span> &#123;</div><div class="line">  <span class="attribute">transition</span>: opacity .<span class="number">3s</span> ease;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.fade-enter</span>, <span class="selector-class">.fade-leave</span> &#123;</div><div class="line">  <span class="attribute">opacity</span>: <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+<div id="transition-mode-demo" class="demo">
+  <input v-model="view" type="radio" value="v-a" id="a" name="view"><label for="a">A</label>
+  <input v-model="view" type="radio" value="v-b" id="b" name="view"><label for="b">B</label>
+  <component :is="view" transition="fade" transition-mode="out-in">
+  </component>
+</div>
+<style>
+  .fade-transition {
+    transition: opacity .3s ease;
+  }
+  .fade-enter, .fade-leave {
+    opacity: 0;
+  }
+</style>
+<script>
+new Vue({
+  el: '#transition-mode-demo',
+  data: {
+    view: 'v-a'
+  },
+  components: {
+    'v-a': {
+      template: '<div>Component A</div>'
+    },
+    'v-b': {
+      template: '<div>Component B</div>'
+    }
+  }
+})
+</script>
+
+<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><h3 id="组件和-v-for"><a href="#组件和-v-for" class="headerlink" title="组件和 v-for"></a>组件和 v-for</h3><p>自定义组件可以像普通元素一样直接使用  <code>v-for</code>：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">v-for</span>=<span class="string">"item in items"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>但是，不能传递数据给组件，因为组件的作用域是孤立的。为了传递数据给组件，应当使用 props：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span></span></div><div class="line">  <span class="attr">v-for</span>=<span class="string">"item in items"</span></div><div class="line">  <span class="attr">:item</span>=<span class="string">"item"</span></div><div class="line">  <span class="attr">:index</span>=<span class="string">"$index"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>不自动把 <code>item</code> 注入组件的原因是这会导致组件跟当前 <code>v-for</code> 紧密耦合。显式声明数据来自哪里可以让组件复用在其它地方。</p>
+<h3 id="编写可复用组件"><a href="#编写可复用组件" class="headerlink" title="编写可复用组件"></a>编写可复用组件</h3><p>在编写组件时，记住是否要复用组件有好处。一次性组件跟其它组件紧密耦合没关系，但是可复用组件应当定义一个清晰的公开接口。</p>
+<p>Vue.js 组件 API 来自三部分——prop，事件和 slot：</p>
+<ul>
+<li><p><strong>prop</strong> 允许外部环境传递数据给组件；</p>
+</li>
+<li><p><strong>事件</strong> 允许组件触发外部环境的 action；</p>
+</li>
+<li><p><strong>slot</strong> 允许外部环境插入内容到组件的视图结构内。</p>
+</li>
+</ul>
+<p>使用 <code>v-bind</code> 和 <code>v-on</code> 的简写语法，模板的缩进清楚且简洁：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span></span></div><div class="line">  <span class="attr">:foo</span>=<span class="string">"baz"</span></div><div class="line">  <span class="attr">:bar</span>=<span class="string">"qux"</span></div><div class="line">  @<span class="attr">event-a</span>=<span class="string">"doThis"</span></div><div class="line">  @<span class="attr">event-b</span>=<span class="string">"doThat"</span>&gt;</div><div class="line">  <span class="comment">&lt;!-- content --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">slot</span>=<span class="string">"icon"</span> <span class="attr">src</span>=<span class="string">"..."</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"main-text"</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="异步组件"><a href="#异步组件" class="headerlink" title="异步组件"></a>异步组件</h3><p>在大型应用中，我们可能需要将应用拆分为小块，只在需要时才从服务器下载。为了让事情更简单，Vue.js 允许将组件定义为一个工厂函数，动态地解析组件的定义。Vue.js 只在组件需要渲染时触发工厂函数，并且把结果缓存起来，用于后面的再次渲染。例如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'async-example'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    resolve(&#123;</div><div class="line">      <span class="attr">template</span>: <span class="string">'&lt;div&gt;I am async!&lt;/div&gt;'</span></div><div class="line">    &#125;)</div><div class="line">  &#125;, <span class="number">1000</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>工厂函数接收一个 <code>resolve</code> 回调，在收到从服务器下载的组件定义时调用。也可以调用 <code>reject(reason)</code> 指示加载失败。这里 <code>setTimeout</code> 只是为了演示。怎么获取组件完全由你决定。推荐配合使用 <a href="http://webpack.github.io/docs/code-splitting.html" target="_blank" rel="external">Webpack 的代码分割功能</a>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Vue.component(<span class="string">'async-webpack-example'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">resolve</span>) </span>&#123;</div><div class="line">  <span class="comment">// 这个特殊的 require 语法告诉 webpack</span></div><div class="line">  <span class="comment">// 自动将编译后的代码分割成不同的块，</span></div><div class="line">  <span class="comment">// 这些块将通过 ajax 请求自动下载。</span></div><div class="line">  <span class="built_in">require</span>([<span class="string">'./my-async-component'</span>], resolve)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="资源命名约定"><a href="#资源命名约定" class="headerlink" title="资源命名约定"></a>资源命名约定</h3><p>一些资源，如组件和指令，是以 HTML 特性或 HTML 自定义元素的形式出现在模板中。因为 HTML 特性的名字和标签的名字<strong>不区分大小写</strong>，所以资源的名字通常需使用 kebab-case 而不是 camelCase 的形式，这不大方便。</p>
+<p>Vue.js 支持资源的名字使用 camelCase 或 PascalCase 的形式，并且在模板中自动将它们转为 kebab-case（类似于 prop 的命名约定）：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 在组件定义中</span></div><div class="line">components: &#123;</div><div class="line">  <span class="comment">// 使用 camelCase 形式注册</span></div><div class="line">  myComponent: &#123; <span class="comment">/*... */</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 在模板中使用 kebab-case 形式 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">my-component</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_6" target="_blank" rel="external">ES6 对象字面量缩写</a> 也没问题：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// PascalCase</span></div><div class="line"><span class="keyword">import</span> TextBox <span class="keyword">from</span> <span class="string">'./components/text-box'</span>;</div><div class="line"><span class="keyword">import</span> DropdownMenu <span class="keyword">from</span> <span class="string">'./components/dropdown-menu'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">  <span class="attr">components</span>: &#123;</div><div class="line">    <span class="comment">// 在模板中写作 &lt;text-box&gt; 和 &lt;dropdown-menu&gt;</span></div><div class="line">    TextBox,</div><div class="line">    DropdownMenu</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="递归组件"><a href="#递归组件" class="headerlink" title="递归组件"></a>递归组件</h3><p>组件在它的模板内可以递归地调用自己，不过，只有当它有 <code>name</code> 选项时才可以：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> StackOverflow = Vue.extend(&#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'stack-overflow'</span>,</div><div class="line">  <span class="attr">template</span>:</div><div class="line">    <span class="string">'&lt;div&gt;'</span> +</div><div class="line">      <span class="comment">// 递归地调用它自己</span></div><div class="line">      <span class="string">'&lt;stack-overflow&gt;&lt;/stack-overflow&gt;'</span> +</div><div class="line">    <span class="string">'&lt;/div&gt;'</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>上面组件会导致一个错误 “max stack size exceeded”，所以要确保递归调用有终止条件。当使用 <code>Vue.component()</code> 全局注册一个组件时，组件 ID 自动设置为组件的 <code>name</code> 选项。</p>
+<h3 id="片断实例"><a href="#片断实例" class="headerlink" title="片断实例"></a>片断实例</h3><p>在使用 <code>template</code> 选项时，模板的内容将替换实例的挂载元素。因而推荐模板的顶级元素始终是单个元素。</p>
+<p>不这么写模板：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>root node 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>root node 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>推荐这么写：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  I have a single root node!</div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>node 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>node 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>下面几种情况会让实例变成一个<strong>片断实例</strong>：</p>
+<ol>
+<li>模板包含多个顶级元素。</li>
+<li>模板只包含普通文本。</li>
+<li>模板只包含其它组件（其它组件可能是一个片段实例）。</li>
+<li>模板只包含一个元素指令，如 <code>&lt;partial&gt;</code> 或 vue-router 的 <code>&lt;router-view&gt;</code>。</li>
+<li>模板根节点有一个流程控制指令，如 <code>v-if</code> 或 <code>v-for</code>。</li>
+</ol>
+<p>这些情况让实例有未知数量的顶级元素，它将把它的 DOM 内容当作片断。片断实例仍然会正确地渲染内容。不过，它<strong>没有</strong>一个根节点，它的 <code>$el</code> 指向一个锚节点，即一个空的文本节点（在开发模式下是一个注释节点）。</p>
+<p>但是更重要的是，<strong>组件元素上的非流程控制指令，非 prop 特性和过渡将被忽略</strong>，因为没有根元素供绑定：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 不可以，因为没有根元素 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">example</span> <span class="attr">v-show</span>=<span class="string">"ok"</span> <span class="attr">transition</span>=<span class="string">"fade"</span>&gt;</span><span class="tag">&lt;/<span class="name">example</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- props 可以 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">example</span> <span class="attr">:prop</span>=<span class="string">"someData"</span>&gt;</span><span class="tag">&lt;/<span class="name">example</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 流程控制可以，但是不能有过渡 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">example</span> <span class="attr">v-if</span>=<span class="string">"ok"</span>&gt;</span><span class="tag">&lt;/<span class="name">example</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>当然片断实例有它的用处，不过通常给组件一个根节点比较好。它会保证组件元素上的指令和特性能正确地转换，同时性能也稍微好些。</p>
+<h3 id="内联模板"><a href="#内联模板" class="headerlink" title="内联模板"></a>内联模板</h3><p>如果子组件有 <code>inline-template</code> 特性，组件将把它的内容当作它的模板，而不是把它当作分发内容。这让模板更灵活。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">inline-template</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>These are compiled as the component's own template<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>Not parent's transclusion content.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>但是 <code>inline-template</code> 让模板的作用域难以理解，并且不能缓存模板编译结果。最佳实践是使用 <code>template</code> 选项在组件内定义模板。</p>
+
+    
+      <div class="guide-links">
+        
+          <span>← <a href="/guide/transitions.html">过渡</a></span>
+        
+        
+          <span style="float:right"><a href="/guide/reactivity.html">深入响应式原理</a> →</span>
+        
+      </div>
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/guide/components.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>

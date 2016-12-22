@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <title>安装 - vue.js</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Vue.js - Intuitive, Fast and Composable MVVM for building interactive interfaces.">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Roboto Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Dosis:300,500&text=Vue.js' rel='stylesheet' type='text/css'>
+        <link href="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" rel='stylesheet' type='text/css'>
+        <link rel="icon" href="/images/logo.png" type="image/x-icon">
+        <script>
+            window.PAGE_TYPE = "guide"
+        </script>
+        <link rel="stylesheet" href="/css/page.css">
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46852172-1', 'vuejs.org');
+  ga('send', 'pageview');
+</script>
+        <script src="/js/vue.js"></script>
+    </head>
+    <body>
+        <div id="mobile-bar">
+            <a class="menu-button"></a>
+            <a class="logo" href="/"></a>
+        </div>
+        
+            <div id="header">
+    <a id="logo" href="/">
+        <img src="/images/logo.png">
+        <span>Vue.js</span>
+    </a>
+    <ul id="nav">
+        <li>
+  <form id="search-form">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/blog/" class="nav-link">博客</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+</div>
+            <div id="main">
+                
+                    
+    <div class="sidebar">
+    <ul class="main-menu">
+        <li>
+  <form id="search-form">
+    <input type="text" id="search-query" class="st-default-search-input">
+  </form>
+</li>
+<li><a href="/guide/" class="nav-link current">教程</a></li>
+<li><a href="/api/" class="nav-link">API</a></li>
+<li><a href="/examples/" class="nav-link">示例</a></li>
+<li><a href="/blog/" class="nav-link">博客</a></li>
+<li class="nav-dropdown-container">
+  <a class="nav-link">社区</a><span class="arrow"></span>
+  <ul class="nav-dropdown">
+    <li><a href="https://github.com/vuejs/vue" class="nav-link" target="_blank">GitHub</a></li>
+    <li><a href="http://forum.vuejs.org" class="nav-link" target="_blank">论坛</a></li>
+    <li><a href="https://gitter.im/vuejs/vue" class="nav-link" target="_blank">聊天室</a></li>
+    <li><a href="https://twitter.com/vuejs" class="nav-link" target="_blank">Twitter</a></li>
+  </ul>
+</li>
+
+
+    </ul>
+    <div class="list">
+        <div id="donate" style="margin-bottom: 20px">
+            <span class="wrapper" style="width: 110px">
+              <img src="/images/patreon.png">
+              <a href="/support-vuejs">支持 Vue.js</a>
+            </span>
+        </div>
+        <h2>
+			
+			教程
+            <select class="version-select">
+                <option selected>1.0</option>
+                <option>0.12</option>
+            </select>
+        </h2>
+        <ul class="menu-root">
+            
+                <li>
+                    <a href="/guide/installation.html" class="sidebar-link current">安装</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/index.html" class="sidebar-link">起步</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/overview.html" class="sidebar-link">概述</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/instance.html" class="sidebar-link">Vue 实例</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/syntax.html" class="sidebar-link">数据绑定语法</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/computed.html" class="sidebar-link">计算属性</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/class-and-style.html" class="sidebar-link">Class 与 Style 绑定</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/conditional.html" class="sidebar-link">条件渲染</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/list.html" class="sidebar-link">列表渲染</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/events.html" class="sidebar-link">方法与事件处理器</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/forms.html" class="sidebar-link">表单控件绑定</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/transitions.html" class="sidebar-link">过渡</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/components.html" class="sidebar-link">组件</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/reactivity.html" class="sidebar-link">深入响应式原理</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/custom-directive.html" class="sidebar-link">自定义指令</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/custom-filter.html" class="sidebar-link">自定义过滤器</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/mixins.html" class="sidebar-link">混合</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/plugins.html" class="sidebar-link">插件</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/application.html" class="sidebar-link">构建大型应用</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/comparison.html" class="sidebar-link">对比其它框架</a>
+                </li>
+            
+                <li>
+                    <a href="/guide/join.html" class="sidebar-link">加入 Vue 社区！</a>
+                </li>
+            
+        </ul>
+<!--         <div id="donate">
+            <span class="wrapper" style="width: 72px">
+              <img src="/images/weixinpay.png">
+              <a>打个赏</a>
+            </span>
+        </div> -->
+    </div>
+</div>
+
+
+<div class="content guide with-sidebar">
+    <div id="ad">
+  <span>Proudly sponsored by</span>
+  <br>
+  <a href="https://strikingly.com/s/careers?utm_source=v" target="_blank"
+    style="display:inline-block;padding-top:8px">
+    <img src="/images/strikingly.png">
+  </a>
+</div>
+
+    <h1>安装</h1>
+    <h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>Vue.js 不支持 IE8 及其以下版本，因为 Vue.js 使用了 IE8 不能实现的 ECMAScript 5 特性。 Vue.js 支持所有<a href="http://caniuse.com/#feat=es5" target="_blank" rel="external">兼容 ECMAScript 5 的浏览器</a>。</p>
+<h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><p>每个版本的更新日志见 <a href="https://github.com/vuejs/vue/releases" target="_blank" rel="external">GitHub</a>。</p>
+<h2 id="独立版本"><a href="#独立版本" class="headerlink" title="独立版本"></a>独立版本</h2><p>直接下载并用 <code>&lt;script&gt;</code> 标签引入，<code>Vue</code> 会被注册为一个全局变量。<strong>重要提示：在开发时请用开发版本，遇到常见错误它会给出友好的警告。</strong></p>
+<div id="downloads"><br><a class="button" href="/js/vue.js" download="">开发版本</a><span class="light info">包含完整的警告和调试模式</span><br><br><a class="button" href="/js/vue.min.js" download="">生产版本</a><span class="light info">删除了警告，26.03kb min+gzip</span><br></div>
+
+<h3 id="CDN"><a href="#CDN" class="headerlink" title="CDN"></a>CDN</h3><p>可以从 <a href="//cdn.jsdelivr.net/vue/1.0.26/vue.min.js">jsdelivr</a> 或 <a href="//cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js">cdnjs</a> 获取（版本更新可能略滞后）。</p>
+<p>也可以使用 <a href="https://npmcdn.com/vue/dist/vue.min.js" target="_blank" rel="external">npmcdn</a>，这个链接指向发布到 npm 上的最新稳定版本。 可以在 <a href="https://npmcdn.com/vue/" target="_blank" rel="external">npmcdn.com/vue/</a> 上查看包的源码。</p>
+<h3 id="CSP-兼容版本"><a href="#CSP-兼容版本" class="headerlink" title="CSP 兼容版本"></a>CSP 兼容版本</h3><p>有些环境，如 Google Chrome Apps，强制应用内容安全策略 (CSP) ，不能使用 <code>new Function()</code> 对表达式求值。这时可以用 <a href="https://github.com/vuejs/vue/tree/csp/dist" target="_blank" rel="external">CSP 兼容版本</a>。</p>
+<h2 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h2><p>在用 Vue.js 构建大型应用时推荐使用 NPM 安装，NPM 能很好地和诸如 <a href="http://webpack.github.io/" target="_blank" rel="external">Webpack</a> 或 <a href="http://browserify.org/" target="_blank" rel="external">Browserify</a> 的 CommonJS 模块打包器配合使用。Vue.js 也提供配套工具来开发<a href="application.html#单文件组件">单文件组件</a>。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 最新稳定版本</span></div><div class="line">$ npm install vue</div><div class="line"><span class="comment"># 最新稳定 CSP 兼容版本</span></div><div class="line">$ npm install vue@csp</div></pre></td></tr></table></figure>
+<h2 id="命令行工具"><a href="#命令行工具" class="headerlink" title="命令行工具"></a>命令行工具</h2><p>Vue.js 提供一个<a href="https://github.com/vuejs/vue-cli" target="_blank" rel="external">官方命令行工具</a>，可用于快速搭建大型单页应用。该工具提供开箱即用的构建工具配置，带来现代化的前端开发流程。只需一分钟即可启动带热重载、保存时静态检查以及可用于生产环境的构建配置的项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 全局安装 vue-cli</span></div><div class="line">$ npm install -g vue-cli</div><div class="line"><span class="comment"># 创建一个基于 "webpack" 模板的新项目</span></div><div class="line">$ vue init webpack my-project</div><div class="line"><span class="comment"># 安装依赖，走你</span></div><div class="line">$ <span class="built_in">cd</span> my-project</div><div class="line">$ npm install</div><div class="line">$ npm run dev</div></pre></td></tr></table></figure>
+<h2 id="开发版本"><a href="#开发版本" class="headerlink" title="开发版本"></a>开发版本</h2><p><strong>重要</strong>：发布到 NPM 上的 CommonJS 包 (<code>vue.common.js</code>) 只在发布新版本时签入 master 分支，所以这些文件在 dev 分支下跟稳定版本是一样的。想使用 GitHub 上最新的源码，需要自己编译：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/vuejs/vue.git node_modules/vue</div><div class="line"><span class="built_in">cd</span> node_modules/vue</div><div class="line">npm install</div><div class="line">npm run build</div></pre></td></tr></table></figure>
+<h2 id="Bower"><a href="#Bower" class="headerlink" title="Bower"></a>Bower</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="comment"># 最新稳定版本</span></div><div class="line">$ bower install vue</div></pre></td></tr></table></figure>
+<h2 id="AMD-模块加载器"><a href="#AMD-模块加载器" class="headerlink" title="AMD 模块加载器"></a>AMD 模块加载器</h2><p>独立版本或通过 Bower 安装的版本已用 <a href="https://github.com/umdjs/umd#readme" target="_blank" rel="external">UMD</a> 包装，因此它们可以直接用作 AMD 模块。</p>
+
+    
+      <div class="guide-links">
+        
+        
+          <span style="float:right"><a href="/guide/index.html">起步</a> →</span>
+        
+      </div>
+    
+    <div class="footer">
+      发现错误？想参与编辑？
+      <a href="https://github.com/vuejs/cn.vuejs.org/blob/master/src/guide/installation.md" target="_blank">
+        在 Github 上编辑此页！
+      </a>
+    </div>
+</div>
+
+                
+            </div>
+            <script src="//cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+            <script src="/js/smooth-scroll.min.js"></script>
+            <script src="/js/common.js"></script>
+        
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        </script>
+    </body>
+</html>
